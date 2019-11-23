@@ -121,8 +121,33 @@ console.log("parcels=",parcels);
 
         console.log("parcels after the status change:", parcels);
 
-        //calculate the shipping cost for the parcel
+        //update the parcels list
+        displayParcels();
 
+        //calculate the shipping cost for the parcel
+        var totalShippingCost = 0;
+        totalShippingCost += SHIPPING_FLAT_RATE;
+        if(parcelFound.express){
+            totalShippingCost += SHIPPING_EXPRESS_ADD;
+        }
+        totalShippingCost += SHIPPING_PER_WEIGHT * +parcelFound.weight;
+
+        //apply tax
+        totalShippingCost *= 1 + +TAX;//the '+' garantees TAX will be considered as numeric
+
+        //alert parcel processing for the user
+        var alertMessage = `Shipping for parcel: ${parcelFound.trackingNumber}\n$${totalShippingCost.toFixed(2)}`;
+        document.getElementById("processParcelMessage").innerHTML=alertMessage.replace("\n"," is ");
+        document.getElementById("processParcelMessage").style.color = "green";
+        
+        alert(alertMessage);
+
+        setTimeout(()=>{
+            document.getElementById("processParcelMessage").innerHTML="";
+        },2000)
+
+        //clear process parcels form
+        clearProcessParcels();
 
     } // end of function processParcel()
 

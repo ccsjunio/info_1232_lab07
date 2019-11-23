@@ -4,9 +4,11 @@ Date:		November 22, 2019
 Purpose:	Lab 7 - Postal Service
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 	<head>
 		<title>Postal Service</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width;initial-scale=1"/>
 		<link rel="stylesheet" href="./main.css" />
 	</head>
 	<body onload="displayParcels();">
@@ -56,6 +58,7 @@ Purpose:	Lab 7 - Postal Service
 				</select>
 				<br>
 				<input type="button" id="processParcelButton" value="Process Parcel" onclick="processParcel();" style="margin-top: 10px;" />
+				<div id="processParcelMessage"></div>
 			</div>
 		</fieldset>
 		<br>
