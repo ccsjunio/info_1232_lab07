@@ -1,12 +1,13 @@
 <!--
-Name:			
-Date:			November 2019
-Purpose:		Lab 7 - Postal Service
+Name:		Carlos Cesar da Silva Ferraz Junior	
+Date:		November 22, 2019
+Purpose:	Lab 7 - Postal Service
 -->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Postal Service</title>
+		<link rel="stylesheet" href="./main.css" />
 	</head>
 	<body onload="displayParcels();">
 		<image src="iwd_ps_logo.png" width="50%" height="50%" />
@@ -36,7 +37,7 @@ Purpose:		Lab 7 - Postal Service
 				<strong>Express Shipping: </strong>
 				<input type="checkbox" id="createParcel_expressShipping" style="transform: scale(1.5);" />
 				<br>
-				<input type="button" value="Create Parcel" onclick="createParcel();" style="margin-top: 10px;" />
+				<input type="button" id="createParcelButton" value="Create Parcel" onclick="createParcel();" style="margin-top: 10px;" />
 			</div>
 		</fieldset>
 		<br>
@@ -54,7 +55,7 @@ Purpose:		Lab 7 - Postal Service
 					<option>Delivered</option>
 				</select>
 				<br>
-				<input type="button" value="Process Parcel" onclick="processParcel();" style="margin-top: 10px;" />
+				<input type="button" id="processParcelButton" value="Process Parcel" onclick="processParcel();" style="margin-top: 10px;" />
 			</div>
 		</fieldset>
 		<br>
@@ -77,27 +78,6 @@ Purpose:		Lab 7 - Postal Service
 		</fieldset>
 		
 		<!-- Javascript -->
-		<script>
-			
-			/*
-				generateTrackingNumber()
-				Purpose: Helper function - generates a random tracking number
-				Parameters: none
-				Returns: string
-			*/
-			function generateTrackingNumber()
-			{
-				const TN_LENGTH = 10;
-				const TN_PREFIX = "IWD";
-				var tokens = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0'];
-				var trackingNumber = new String(TN_PREFIX);
-				for(var x = 0; x < TN_LENGTH; x++) {
-					trackingNumber = trackingNumber.concat( tokens[ Math.floor( Math.random() * tokens.length ) ] );
-				}
-				console.log("Generated: " + trackingNumber);
-				return trackingNumber;
-			} // end generateTrackingNumber
-			
-		</script>
+		<script src="main.js" type="text/javascript"></script>
 	</body>
 </html>
