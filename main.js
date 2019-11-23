@@ -139,6 +139,7 @@ console.log("parcels=",parcels);
         var alertMessage = `Shipping for parcel: ${parcelFound.trackingNumber}\n$${totalShippingCost.toFixed(2)}`;
         document.getElementById("processParcelMessage").innerHTML=alertMessage.replace("\n"," is ");
         document.getElementById("processParcelMessage").style.color = "green";
+        document.getElementById("processParcelMessage").style.display = "inline";
         
         alert(alertMessage);
 
@@ -216,6 +217,7 @@ console.log("parcels=",parcels);
     function displayParcels(){
         //declare and clear the output are for parcels
         var displayParcelOutput = document.getElementById("displayParcelOutput");
+        document.getElementById("formerParcelsHeader").innerHTML = "";
         displayParcelOutput.innerHTML = ""; 
         //build the header for the table
         displayParcelOutput.appendChild(buildParcelsListHeaderMarkup());
